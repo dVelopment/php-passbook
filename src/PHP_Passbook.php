@@ -82,17 +82,17 @@ class PHP_Passbook extends PKPass
         foreach ($this->locales as $locale => $strings) {
             $logicalName = sprintf("%s.lproj/pass.strings", $locale);
             $fileName = sprintf("locale_%es.strings", $locale);
-            $file = sprintf("%s%s/%s", $this->tempPath, $this->uniqid, $fileName);
+            $filePath = sprintf("%s%s/%s", $this->tempPath, $this->uniqid, $fileName);
 
             // write strings to file
-            $fp = fopen($file, 'w');
+            $fp = fopen($filePath, 'w');
             foreach ($strings as $key=>$value) {
                 fwrite($fp, sprintf("\"%s\" = \"%s\"\n", $key, $value));
             }
             fclose($fp);
 
             // add file to files array
-            $this->addFile($fileName, $logicalName);
+            $this->addFile($filePath, $logicalName);
         }
     }
 }
