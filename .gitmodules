@@ -1,0 +1,3 @@
+[submodule "vendor/PHP-PKPass"]
+	path = vendor/PHP-PKPass
+	url = https://github.com/tschoffelen/PHP-PKPass
